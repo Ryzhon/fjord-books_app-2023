@@ -8,11 +8,24 @@ ja:
         memo: メモ
         author: 著者
         picture: 写真
-  Books: 本一覧
-  Editing books: 本の編集
-  Show this book: 本の詳細
-  Back to books: 本一覧に戻る
-  Edit this book: 本を編集する
-  New book: 本を登録する
-  Destroy this book: 本を削除する
+  actions:
+    new: 新規登録
+    edit: 編集
+    destroy: 削除
+    show: 詳細
+    back_to_index: 一覧に戻る
+  resources:
+    books:
+      name: 本
+      actions:
+        index: "%{resource}の一覧"
+        new: "%{resource}を登録する"
+        edit: "%{resource}を編集する"
+        destroy: "%{resource}を削除する"
+        show: "%{resource}の詳細"
+        back_to_index: "%{resource}一覧に戻る"
+  notices:
+    book_created: "本が正常に作成されました。"
+    book_updated: "本が正常に更新されました。"
+    book_deleted: "本が正常に削除されました。"
 

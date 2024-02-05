@@ -1,24 +1,23 @@
 <div id="<%= dom_id book %>">
   <p>
-    <strong><%= t(book.title) %>：</strong>
+    <strong><%= Book.human_attribute_name(:title) %>：</strong>
     <%= book.title %>
   </p>
 
   <p>
-    <strong><%= t(book.memo) %>：</strong>
+    <strong><%= Book.human_attribute_name(:memo) %>：</strong>
     <%= book.memo %>
   </p>
 
   <p>
-    <strong><%= t(book.author) %>：</strong>
+    <strong><%= Book.human_attribute_name(:author) %>：</strong>
     <%= book.author %>
   </p>
 
   <% if book.picture.present? %>
     <p>
-      <strong><%= t('book.picture') %>：</strong>
+      <strong><%= Book.human_attribute_name(:picture) %>：</strong>
       <%= image_tag(book.picture_url) %>
     </p>
   <% end %>
-
 </div>
