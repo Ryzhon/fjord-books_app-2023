@@ -1,18 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= t('resources.books.actions.index', resource: Book.model_name.human) %></h1>
+<h1><%= t('resources.actions.index', resource: Book.model_name.human) %></h1>
 
 <div id="books" class="index-items">
   <% @books.each do |book| %>
     <div class="index-item">
       <%= render book %>
       <p>
-        <%= link_to t('resources.books.actions.show', resource: Book.model_name.human), book %>
+        <%= link_to t('resources.actions.show', resource: Book.model_name.human), book %>
       </p>
     </div>
   <% end %>
 </div>
 
 <nav class="page-nav">
-  <%= link_to t('resources.books.actions.new', resource: Book.model_name.human), new_book_path %>
+  <%= link_to t('resources.actions.new', resource: Book.model_name.human), new_book_path %>
 </nav>

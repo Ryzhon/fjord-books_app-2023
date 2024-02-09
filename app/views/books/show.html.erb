@@ -1,13 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= t('resources.books.actions.show', resource: Book.model_name.human) %></h1>
+<h1><%= t('resources.actions.show', resource: Book.model_name.human) %></h1>
 
 <div class="show-item">
   <%= render @book %>
 </div>
 
 <nav class="page-nav">
-   <%= link_to t('resources.books.actions.edit', resource: Book.model_name.human), edit_book_path(@book) %> |
-   <%= link_to t('resources.books.actions.back_to_index', resource: Book.model_name.human), books_path %>
-   <%= button_to t('resources.books.actions.destroy', resource: Book.model_name.human), @book, method: :delete, data: { confirm: 'Are you sure?' } %>
+   <%= link_to t('resources.actions.edit', resource: Book.model_name.human), edit_book_path(@book) %> |
+   <%= link_to t('resources.actions.back_to_index', resource: Book.model_name.human), books_path %>
+   <%= button_to t('resources.actions.destroy', resource: Book.model_name.human), @book, method: :delete, data: { confirm: 'Are you sure?' } %>
 </nav>

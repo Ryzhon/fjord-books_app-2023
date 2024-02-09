@@ -1,10 +1,10 @@
 
-<h1><%= t('resources.books.actions.new', resource: Book.model_name.human) %></h1>
+<h1><%= t('resources.actions.new', resource: Book.model_name.human) %></h1>
 
 <%= render "form", book: @book %>
 
 <br>
 
 <nav class="page-nav">
-     <%= link_to t('resources.books.actions.back_to_index', resource: Book.model_name.human), books_path %>
+     <%= link_to t('resources.actions.back_to_index', resource: Book.model_name.human), books_path %>
 </nav>
