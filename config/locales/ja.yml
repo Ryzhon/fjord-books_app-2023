@@ -24,10 +24,6 @@ ja:
       show: "%{resource}の詳細"
       back_to_index: "%{resource}一覧に戻る"
   notices:
-    book_created: "本が正常に作成されました。"
-    book_updated: "本が正常に更新されました。"
-    book_deleted: "本が正常に削除されました。"
-  notices:
     created: "%{resource} 正常に作成されました。 "
     updated: "%{resource} 正常に更新されました。"
     deleted: "%{resource} 正常に削除されました。"
