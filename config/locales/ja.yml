@@ -1,0 +1,30 @@
+ja:
+  activerecord:
+    models:
+      book: 本
+    attributes:
+      book:
+        title: タイトル
+        memo: メモ
+        author: 著者
+        picture: 写真
+  actions:
+    new: 新規登録
+    edit: 編集
+    destroy: 削除
+    show: 詳細
+    back_to_index: 一覧に戻る
+  resources:
+    name: "%{resource}"
+    actions:
+      index: "%{resource}の一覧"
+      new: "%{resource}を登録する"
+      edit: "%{resource}を編集する"
+      destroy: "%{resource}を削除する"
+      show: "%{resource}の詳細"
+      back_to_index: "%{resource}一覧に戻る"
+  notices:
+    created: "%{resource} 正常に作成されました。 "
+    updated: "%{resource} 正常に更新されました。"
+    deleted: "%{resource} 正常に削除されました。"
+
