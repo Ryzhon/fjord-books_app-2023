@@ -1,13 +1,13 @@
-<h1>ユーザー一覧</h1>
+<h1><%= t('resources.actions.index', resource: t('activerecord.models.user')) %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Email</th>
-      <th>郵便番号</th>
-      <th>住所</th>
-      <th>自己紹介</th>
-      <th>プロフィール</th>
+      <th><%= t("attributes.user.email") %></th>
+      <th><%= t("attributes.user.postal_code") %></th>
+      <th><%= t("attributes.user.address") %></th>
+      <th><%= t("attributes.user.introduction") %></th>
+      <th><%= t("attributes.user.profile") %></th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +17,7 @@
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
         <td><%= user.introduction %></td>
-        <td><%= link_to '表示', user_path(user) %></td>
+        <td><%= link_to t("attributes.user.show"), user_path(user) %></td>
       </tr>
     <% end %>
   </tbody>

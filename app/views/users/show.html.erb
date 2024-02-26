@@ -1,8 +1,8 @@
-<h1>ユーザー詳細</h1>
+<h1><%= t('resources.actions.show', resource: t('activerecord.models.user')) %></h1>
 
-<p>Email: <%= @user.email %></p>
-<p>郵便番号: <%= @user.postal_code %></p>
-<p>住所: <%= @user.address %></p>
-<p>自己紹介: <%= @user.introduction %></p>
+<p><%= t("attributes.user.email") %>: <%= @user.email %></p>
+<p><%= t("attributes.user.postal_code") %>: <%= @user.postal_code %></p>
+<p><%= t("attributes.user.address") %>: <%= @user.address %></p>
+<p><%= t("attributes.user.introduction") %>: <%= @user.introduction %></p>
 
-<%= link_to '編集', edit_user_registration_path %>
+<%= link_to t("actions.edit"), edit_user_registration_path %>

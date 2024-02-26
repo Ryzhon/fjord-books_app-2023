@@ -12,12 +12,12 @@
 
   <body class="<%= params[:action] %>">
   <% if user_signed_in? %>
-  <%= link_to 'ユーザー一覧', users_path %> |
-  <%= link_to 'ユーザー詳細', user_path(current_user) %> |
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <%= link_to t('resources.actions.index', resource: t('activerecord.models.user')), users_path %> |
+  <%= link_to t('resources.actions.show', resource: t('activerecord.models.user')), user_path(current_user) %> |
+  <%= link_to t("devise.links.log_out"), destroy_user_session_path, method: :delete %>
   <% else %>
-  <%= link_to 'ログイン', new_user_session_path %> |
-  <%= link_to 'サインアップ', new_user_registration_path %>
+  <%= link_to t("devise.links.log_in"), new_user_session_path %> |
+  <%= link_to t("devise.links.sign_up"), new_user_registration_path %>
   <% end %>
     <%= yield %>
   </body>

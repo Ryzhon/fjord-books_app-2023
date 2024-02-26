@@ -18,6 +18,7 @@ ja:
   devise:
     links:
       log_in: "ログイン"
+      log_out: "ログアウト"
       sign_up: "サインアップ"
       forgot_password: "パスワードをお忘れですか？"
       didnt_receive_confirmation_instructions: "確認メールが届いていませんか？"
@@ -96,3 +97,5 @@ ja:
       postal_code: "郵便番号"
       address: "住所"
       introduction: "自己紹介"
+      profile: "プロフィール"
+      show: "表示"
