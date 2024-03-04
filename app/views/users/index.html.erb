@@ -3,10 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th><%= t("attributes.user.email") %></th>
-      <th><%= t("attributes.user.postal_code") %></th>
-      <th><%= t("attributes.user.address") %></th>
-      <th><%= t("attributes.user.introduction") %></th>
+      <th><%= User.human_attribute_name(:email) %></th>
+      <th><%= User.human_attribute_name(:postal_code) %></th>
+      <th><%= User.human_attribute_name(:address) %></th>
+      <th><%= User.human_attribute_name(:introduction) %></th>
       <th><%= t("attributes.user.profile") %></th>
     </tr>
   </thead>
