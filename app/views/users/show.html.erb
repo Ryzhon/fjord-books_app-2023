@@ -5,4 +5,6 @@
 <p><%= t("attributes.user.address") %>: <%= @user.address %></p>
 <p><%= t("attributes.user.introduction") %>: <%= @user.introduction %></p>
 
-<%= link_to t("actions.edit"), edit_user_registration_path %>
+<% if user_signed_in? && current_user == @user %>
+  <%= link_to t("actions.edit"), edit_user_registration_path %>
+<% end %>
