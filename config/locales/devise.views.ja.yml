@@ -88,14 +88,3 @@ ja:
     unlocks:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
-  attributes:
-    user:
-      email: "メールアドレス"
-      password: "パスワード"
-      password_confirmation: "パスワード確認"
-      current_password: "現在のパスワード"
-      postal_code: "郵便番号"
-      address: "住所"
-      introduction: "自己紹介"
-      profile: "プロフィール"
-      show: "表示"

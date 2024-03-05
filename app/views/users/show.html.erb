@@ -1,9 +1,9 @@
 <h1><%= t('resources.actions.show', resource: t('activerecord.models.user')) %></h1>
 
-<p><%= t("attributes.user.email") %>: <%= @user.email %></p>
-<p><%= t("attributes.user.postal_code") %>: <%= @user.postal_code %></p>
-<p><%= t("attributes.user.address") %>: <%= @user.address %></p>
-<p><%= t("attributes.user.introduction") %>: <%= @user.introduction %></p>
+<p><%= User.human_attribute_name(:email) %>: <%= @user.email %></p>
+<p><%= User.human_attribute_name(:postal_code) %>: <%= @user.postal_code %></p>
+<p><%= User.human_attribute_name(:address) %>: <%= @user.address %></p>
+<p><%= User.human_attribute_name(:introduction) %>: <%= @user.introduction %></p>
 
 <% if user_signed_in? && current_user == @user %>
   <%= link_to t("actions.edit"), edit_user_registration_path %>
