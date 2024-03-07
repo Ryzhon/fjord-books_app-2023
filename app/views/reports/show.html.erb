@@ -4,6 +4,24 @@
   <%= render @report %>
 </div>
 
+<div>
+  <h3>この日報に言及している日報</h3>
+  <ul>
+    <% @report.mentioning_reports.each do |mentioning_report| %>
+      <li><%= link_to mentioning_report.title, report_path(mentioning_report) %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <h3>この日報が言及している日報</h3>
+  <ul>
+    <% @report.mentioned_reports.each do |mentioned_report| %>
+      <li><%= link_to mentioned_report.title, report_path(mentioned_report) %></li>
+    <% end %>
+  </ul>
+</div>
+
 <%= render 'shared/comments', commentable: @report %>
 
 <nav class="page-nav">
@@ -11,7 +29,6 @@
     <%= link_to t('views.common.edit', name: Report.model_name.human.downcase), edit_report_path(@report) %> |
   <% end %>
   <%= link_to t('views.common.back', name: i18n_pluralize(Report.model_name.human.downcase)), reports_path %>
-
   <% if @report.editable?(current_user) %>
     <%= button_to t('views.common.destroy', name: Report.model_name.human.downcase), @report, method: :delete %>
   <% end %>
