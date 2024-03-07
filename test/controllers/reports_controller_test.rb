@@ -5,6 +5,8 @@ require 'test_helper'
 class ReportsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @report = reports(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test 'should get index' do
