@@ -60,8 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_07_003358) do
   end
 
   create_table "mentions", force: :cascade do |t|
-    t.integer "mentioning_report_id"
-    t.integer "mentioned_report_id"
+    t.belongs_to :mentioned_report, null: false, foreign_key: { to_table: :reports }
+    t.belongs_to :mentioned_report, null: false, foreign_key: { to_table: :reports }
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["mentioning_report_id", "mentioned_report_id"], name: "index_mentions_on_mentioning_report_id_and_mentioned_report_id", unique: true

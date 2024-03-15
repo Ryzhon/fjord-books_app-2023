@@ -12,7 +12,6 @@ class Report < ApplicationRecord
   validates :content, presence: true
 
   after_save :update_mentions
-  after_destroy :remove_mentions
 
   def editable?(target_user)
     user == target_user
@@ -25,7 +24,9 @@ class Report < ApplicationRecord
   private
 
   def update_mentions
+    current_report_id = id.to_s
     current_mentioned_ids = content.scan(%r{http://localhost:3000/reports/(\d+)}).flatten
+    current_mentioned_ids.delete(current_report_id)
     existing_mentioned_ids = mentioned_reports.pluck(:id).map(&:to_s)
 
     (current_mentioned_ids - existing_mentioned_ids).each do |id|
@@ -37,10 +38,5 @@ class Report < ApplicationRecord
       mentioned_report = Report.find_by(id:)
       mentioning_mentions.find_by(mentioned_report_id: mentioned_report.id).destroy if mentioned_report
     end
-  end
-
-  def remove_mentions
-    mentioning_mentions.destroy_all
-    mentioned_mentions.destroy_all
   end
 end
