@@ -60,11 +60,20 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_07_003358) do
   end
 
   create_table "mentions", force: :cascade do |t|
-    t.belongs_to :mentioned_report, null: false, foreign_key: { to_table: :reports }
-    t.belongs_to :mentioned_report, null: false, foreign_key: { to_table: :reports }
+    t.integer "mentioning_report_id"
+    t.integer "mentioned_report_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["mentioning_report_id", "mentioned_report_id"], name: "index_mentions_on_mentioning_report_id_and_mentioned_report_id", unique: true
+  end
+
+  create_table "report_mentions", force: :cascade do |t|
+    t.integer "mention_to_id", null: false
+    t.integer "mentioned_by_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mention_to_id", "mentioned_by_id"], name: "index_report_mentions_on_mention_to_id_and_mentioned_by_id", unique: true
+    t.index ["mentioned_by_id"], name: "index_report_mentions_on_mentioned_by_id"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -97,5 +106,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_07_003358) do
   add_foreign_key "comments", "users"
   add_foreign_key "mentions", "reports", column: "mentioned_report_id"
   add_foreign_key "mentions", "reports", column: "mentioning_report_id"
+  add_foreign_key "report_mentions", "reports", column: "mention_to_id"
+  add_foreign_key "report_mentions", "reports", column: "mentioned_by_id"
   add_foreign_key "reports", "users"
 end
